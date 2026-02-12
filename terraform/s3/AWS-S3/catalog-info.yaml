@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: {{ values.componentName }}
+  title: S3 Bucket - {{ values.bucketName }}
+  description: AWS S3 bucket provisioned via Terraform ({{ values.bucketName }}) in shared repo
+  annotations:
+    backstage.io/source-location: url:{{ values.targetRepo }}
+  tags:
+    - terraform
+    - aws
+    - s3
+spec:
+  type: infrastructure
+  lifecycle: production
+  owner: platform-team
