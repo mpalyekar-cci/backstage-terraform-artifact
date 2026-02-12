@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: {{ values.componentName }}
+  title: SSM Parameter - {{ values.parameterName }}
+  description: AWS SSM Parameter Store parameter provisioned via Terraform ({{ values.parameterName }}) in shared repo
+  annotations:
+    backstage.io/source-location: url:{{ values.targetRepo }}
+  tags:
+    - terraform
+    - aws
+    - ssm
+spec:
+  type: infrastructure
+  lifecycle: production
+  owner: platform-team
